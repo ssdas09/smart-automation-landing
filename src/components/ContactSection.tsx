@@ -70,7 +70,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">Email</p>
-                  <p className="font-medium">contact@automateai.com</p>
+                  <p className="font-medium">aiservices@swayam.co.in</p>
                 </div>
               </div>
               
@@ -80,7 +80,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">Phone</p>
-                  <p className="font-medium">+1 (888) 123-4567</p>
+                  <p className="font-medium">+919311147087</p>
                 </div>
               </div>
               
@@ -90,7 +90,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">Address</p>
-                  <p className="font-medium">123 Tech Avenue, San Francisco, CA 94107</p>
+                  <p className="font-medium">123 Tech Avenue, New Delhi, India</p>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ const ContactSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="(123) 456-7890"
+                  placeholder="+91 98765 43210"
                   className="bg-background/30"
                 />
               </div>

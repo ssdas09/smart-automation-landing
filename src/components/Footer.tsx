@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Zap className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold gradient-text">AutomateAI</span>
+              <span className="text-xl font-bold gradient-text">SwayamAI</span>
             </div>
             <p className="text-foreground/70">
               Transforming businesses with intelligent AI automation solutions.
@@ -42,16 +42,16 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Contact</h4>
             <ul className="space-y-2 text-foreground/70">
               <li>123 Tech Avenue</li>
-              <li>San Francisco, CA 94107</li>
-              <li>contact@automateai.com</li>
-              <li>+1 (888) 123-4567</li>
+              <li>New Delhi, India</li>
+              <li>aiservices@swayam.co.in</li>
+              <li>+919311147087</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-border/30 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-foreground/50 text-sm">
-            © {year} AutomateAI. All rights reserved.
+            © {year} SwayamAI. All rights reserved.
           </p>
           
           <div className="flex gap-6">

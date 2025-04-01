@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Zap className="h-6 w-6 text-primary animate-pulse-glow" />
-            <span className="text-xl font-bold gradient-text">AutomateAI</span>
+            <span className="text-xl font-bold gradient-text">SwayamAI</span>
           </div>
 
           {/* Desktop Navigation */}
