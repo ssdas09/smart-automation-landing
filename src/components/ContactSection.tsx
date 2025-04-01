@@ -70,7 +70,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">Email</p>
-                  <p className="font-medium">aiservices@swayam.co.in</p>
+                  <p className="font-medium">aiservices@swayamai.co.in</p>
                 </div>
               </div>
               
