@@ -5,6 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
+import emailjs from 'emailjs-com';
+
+// Configure EmailJS with public keys
+const EMAILJS_SERVICE_ID = "service_placeholder"; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = "template_placeholder"; // Replace with your Template ID
+const EMAILJS_PUBLIC_KEY = "public_key_placeholder"; // Replace with your Public Key
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -21,24 +27,51 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        to_email: "aiservices@swayamai.co.in",
+        from_name: formData.name,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        message: formData.message
+      };
+      
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      
+      // Show success message
       toast({
-        title: "Message Received",
+        title: "Message Sent Successfully",
         description: "We'll get back to you as soon as possible.",
       });
+      
+      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
         message: ""
       });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Message Failed to Send",
+        description: "An error occurred while sending your message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -156,9 +189,14 @@ const ContactSection = () => {
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
               
-              <p className="text-xs text-center text-foreground/50">
-                By submitting this form, you agree to our Privacy Policy and Terms of Service.
-              </p>
+              <div className="text-xs text-center space-y-2">
+                <p className="text-foreground/50">
+                  By submitting this form, you agree to our Privacy Policy and Terms of Service.
+                </p>
+                <p className="text-foreground/80">
+                  We'll never share your information with third parties.
+                </p>
+              </div>
             </form>
           </div>
         </div>
